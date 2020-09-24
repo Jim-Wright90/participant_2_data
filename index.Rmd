@@ -108,7 +108,7 @@ gas_tbl <- gas %>%
     compact = TRUE,
     highlight = TRUE,
     bordered = TRUE,
-    height = 400,
+    height = 200,
     width = 500)
 ```
 
