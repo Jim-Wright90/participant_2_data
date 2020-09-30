@@ -166,6 +166,7 @@ brief_self_plot <- ggplot(brief_self_tidy, aes(`Scale/Index`, `Response`)) +
   labs(x = "",
        y = "",
        title = "BRIEF-2 Self-Report",
+       color = NULL,
        subtitle = "Scores Greater than 65 are Considered Clinically Significant")
 
 brief_self_plot
@@ -199,6 +200,7 @@ brief_parent_plot <- ggplot(brief_parent_tidy, aes(`Scale/Index`, `Response`)) +
   labs(x = "",
        y = "",
        title = "BRIEF-2 Parent-Report",
+       color = NULL,
        subtitle = "Scores Greater than 65 are Considered Clinically Significant")
 
 brief_parent_plot
@@ -270,6 +272,7 @@ class_self_1_plot <- ggplot(class_self_1_tidy, aes(`Question`, `Response`)) +
   labs(x = "",
        y = "",
        title = "CLASS Responses",
+       color = NULL,
        subtitle = "Questions 1-14")
 
 class_self_1_plot
@@ -312,6 +315,7 @@ class_self_2_plot <- ggplot(class_self_2_tidy, aes(`Question`, `Response`)) +
   labs(x = "",
        y = "",
        title = "CLASS Responses",
+       color = NULL,
        subtitle = "Questions 15-20")
 
 class_self_2_plot
@@ -342,6 +346,7 @@ class_parent_1_plot <- ggplot(class_parent_1_tidy, aes(`Question`, `Response`)) 
   labs(x = "",
        y = "",
        title = "CLASS Responses",
+       color = NULL,
        subtitle = "Questions 1-14")
 
 class_parent_1_plot
@@ -371,7 +376,8 @@ class_parent_2_plot <- ggplot(class_parent_2_tidy, aes(`Question`, `Response`)) 
         plot.subtitle = element_text(color = "black", face = "bold")) +
   labs(x = "",
        y = "",
-    title = "CLASS Responses",
+       color = NULL,
+       title = "CLASS Responses",
        subtitle = "Questions 15-20")
 
 class_parent_2_plot
