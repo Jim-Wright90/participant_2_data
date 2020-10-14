@@ -520,22 +520,22 @@ pcss_table
 ```{r, include=FALSE}
 head(status)
 
-#status_plot <- ggplot() +
-  #geom_line(data = status, aes(x = session, y = bl)) +
-  #geom_point(data = status, aes(x = session, y = bl), size = 2) +
-  #geom_line(data = status, aes(x = session, y = tx)) +
-  #geom_point(data = status, aes(x = session, y = tx), size = 2) +
-  #scale_x_continuous(limits = c(0, 13),
-                     #breaks = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
-  #scale_y_continuous(limits = c(0, 60),
-                     #breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60)) +
-  #theme_classic() +
-  #theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
-  #labs(x = "Session",
-       #y = "Number of Minutes",
-       #title = "Number of Minutes per Class Engaged in Online Spanish Lecture") 
+status_plot <- ggplot() +
+  geom_line(data = status, aes(x = session, y = bl)) +
+  geom_point(data = status, aes(x = session, y = bl), size = 2) +
+  geom_line(data = status, aes(x = session, y = tx)) +
+  geom_point(data = status, aes(x = session, y = tx), size = 2) +
+  scale_x_continuous(limits = c(0, 13),
+                     breaks = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
+  scale_y_continuous(limits = c(0, 60),
+                     breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+       y = "Number of Minutes per Week Spent Studying for Spanish Class",
+       title = "Status Tracking Goal") 
 
-#status_plot
+status_plot
 
 head(status_all)
 
@@ -557,49 +557,63 @@ status_plot_all
 ```
 
 ```{r, include=TRUE}
-status_plot_all
+status_plot
 ```
 
 ### Repeated Strategy Measurements {.tabset .tabset-fade .tabset-pills}
+
+Cognitive Strategy: Use of the reminders app to set specific times throughout the week to dedicate to studying for Spanish class.
+
+* Participant will adhere to the two set reminders per week. 
+
 
 #### Frequency of Strategy Use
 
 ```{r, include=FALSE}
 
-#head(strategy)
+head(strategy)
 
 
-#freq_plot <- ggplot(strategy, aes(session, freq)) +
-  #geom_line() +
-  #geom_point(size = 2) +
-  #scale_x_continuous(limits = c(4, 13),
-                     #breaks = c(4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
-  #scale_y_continuous(limits = c(0, 20),
-                     #breaks = c(0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20)) +
-  #theme_classic() +
-  #theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
-  #labs(x = "Session",
-       #y = "Number of Tasks",
-       #title = "Weekly Number of Tasks Entered into Planner") 
+freq_plot <- ggplot(strategy, aes(session, freq)) +
+  geom_line() +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(4, 13),
+                     breaks = c(4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
+  scale_y_continuous(limits = c(0, 2),
+                     breaks = c(0, 1, 2)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+       y = "Number of Reminders",
+       title = "Weekly Number of Study Reminders Adhered To") 
   
-#freq_plot
+freq_plot
 
-#help_plot <- ggplot(strategy, aes(session, help)) +
-  #geom_line() +
-  #geom_point(size = 2) +
-  #scale_x_continuous(limits = c(4, 13),
-                     #breaks = c(4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
-  #scale_y_continuous(limits = c(0, 5),
-                    # breaks = c(1, 2, 3, 4, 5)) +
-  #theme_classic() +
-  #theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
-  #labs(x = "Session",
-      # y = "Level of Helpfulness",
-      # title = "Perceived Helpfulness of Planner",
-      # caption = "1 = Not Helpful at All\n 2 = Not Helpful\n 3 = Somewhat Helpful\n 4 = Helpful\n 5 = Very Helpful") 
 
-#help_plot
+help_plot <- ggplot(strategy, aes(session, help)) +
+  geom_line() +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(4, 13),
+                     breaks = c(4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
+  scale_y_continuous(limits = c(0, 5),
+                     breaks = c(1, 2, 3, 4, 5)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+       y = "Level of Helpfulness",
+       title = "Perceived Helpfulness of Study Reminders",
+       caption = "1 = Not Helpful at All\n 2 = Not Helpful\n 3 = Somewhat Helpful\n 4 = Helpful\n 5 = Very Helpful") 
+
+help_plot
 
 ```
 
+```{r, include=TRUE}
+freq_plot
+```
+
 #### Perceived Strategy Helpfulness
+
+```{r, include=TRUE}
+help_plot
+```
