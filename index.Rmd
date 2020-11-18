@@ -820,7 +820,7 @@ status_plot <- ggplot() +
   theme_classic() +
   theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
   labs(x = "Session",
-       y = "Number of Minutes per Week Spent Studying for Spanish Class",
+       y = "Minutes per Week Spent Studying for Spanish Class",
        title = "Status Tracking Goal") 
 
 status_plot
