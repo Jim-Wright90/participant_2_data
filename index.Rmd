@@ -854,10 +854,10 @@ Cognitive Strategy: Use of the reminders app to set specific times throughout th
 
 * Participant will adhere to the two set reminders per week. 
 
-Cognitive Strategy identified during session 11 to be measured sessions 12 and 13: have an accountability partner to encourage one another to study for a desired amount of time. 
+Cognitive Strategy identified during session 11 to be measured sessions 12 and 13: have an accountability partner to study with for a desired amount of time. 
 
 
-#### Frequency of Strategy Use
+#### Frequency of Use of Reminders App Strategy 
 
 ```{r, include=FALSE}
 
@@ -902,8 +902,55 @@ help_plot
 freq_plot
 ```
 
-#### Perceived Strategy Helpfulness
+#### Perceived Helpfulness of Reminders App Strategy 
 
 ```{r, include=TRUE}
 help_plot
+```
+
+#### Frequency of Use of Accountability Partner Strategy 
+
+```{r, include=FALSE}
+
+freq_plot2 <- ggplot(strategy, aes(session, freq_2)) +
+  geom_line() +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(12, 13),
+                     breaks = c(12, 13)) +
+  scale_y_continuous(limits = c(0, 5),
+                     breaks = c(0, 1, 2, 3, 4, 5)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+       y = "Number of Study Sessions",
+       title = "Weekly Number of Study Sessions with Accountability Partner") 
+  
+freq_plot2
+
+help_plot2 <- ggplot(strategy, aes(session, help_2)) +
+  geom_line() +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(12, 13),
+                     breaks = c(12, 13)) +
+  scale_y_continuous(limits = c(0, 5),
+                     breaks = c(1, 2, 3, 4, 5)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+       y = "Level of Helpfulness",
+       title = "Perceived Helpfulness of Accountability Partner",
+       caption = "1 = Not Helpful at All\n 2 = Not Helpful\n 3 = Somewhat Helpful\n 4 = Helpful\n 5 = Very Helpful") 
+
+help_plot2
+
+```
+
+```{r, include=TRUE}
+freq_plot2
+```
+
+#### Perceived Helpfulness of Accountability Partner Strategy
+
+```{r, include=TRUE}
+help_plot2
 ```
