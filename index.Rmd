@@ -147,10 +147,23 @@ brief_self_tidy <- brief_self %>%
 
 head(brief_self_tidy)
 
-brief_scales <- c("Global Executive Composite",
+
+brief_self_scales <- c("Global Executive Composite",
                   "Cognitive Regulation Index",
-                  "Organization Scale",
+                  "Plan/Organize Scale",
+                  "Working Memory Scale",
                   "Task Completion Scale",
+                  "Emotional Regulation Index",
+                  "Emotional Control Scale",
+                  "Shift Scale",
+                  "Behavior Regulation Index",
+                  "Self-Monitor Scale",
+                  "Inhibit Scale")
+
+brief_parent_scales <- c("Global Executive Composite",
+                  "Cognitive Regulation Index",
+                  "Organization of Materials Scale",
+                  "Task-Monitor Scale",
                   "Plan/Organize Scale",
                   "Working Memory Scale",
                   "Initiate Scale",
@@ -171,7 +184,7 @@ brief_self_plot <- ggplot(brief_self_tidy, aes(`Scale/Index`, `Response`)) +
   geom_point(aes(color = `Assessment`)) +
   scale_color_OkabeIto() +
   coord_flip() +
-  scale_x_discrete(limits = brief_scales) +
+  scale_x_discrete(limits = brief_self_scales) +
   scale_y_continuous(limits = c(30, 90),
                      breaks = c(30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90)) +
   geom_text_repel(aes(label = `Response`)) +
@@ -205,7 +218,7 @@ brief_parent_plot <- ggplot(brief_parent_tidy, aes(`Scale/Index`, `Response`)) +
   geom_point(aes(color = `Assessment`)) +
   scale_color_OkabeIto() +
   coord_flip() +
-  scale_x_discrete(limits = brief_scales) +
+  scale_x_discrete(limits = brief_parent_scales) +
   scale_y_continuous(limits = c(30, 90),
                      breaks = c(30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90)) +
   geom_text_repel(aes(label = `Response`)) +
